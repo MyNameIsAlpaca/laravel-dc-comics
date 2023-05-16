@@ -3,17 +3,17 @@
 @section('content')
 <div class="single-comics">
   <div class="comic-pic">
-    <img src="{{$comics[0]['thumb']}}" alt="">
+    <img src="{{$comics->thumb}}" alt="">
   </div>
   <div class="container">
     <div class="main-container-top">
       <div class="left-section">
         <h2 class="title">
-          {{ $comics[0]['title']}}
+          {{ $comics->title}}
         </h2>
         <div class="price">
           <div class="left">
-            <span class="lightgreen">U.S. price:</span> {{$comics[0]['price']}}
+            <span class="lightgreen">U.S. price:</span> {{$comics->price}}
           </div>
           <div class="right">
             <span class="lightgreen">AVAILABLE</span>
@@ -21,7 +21,7 @@
           </div>
         </div>
         <div class="description">
-          {{$comics[0]['description']}}
+          {{$comics->desc}}
         </div>
       </div>
       <div class="right-section">
@@ -41,16 +41,12 @@
           <hr>
           <span>
             Art by:
-            @foreach($comics[0]['artists'] as $artist)
-                <a href="#">{{$artist}}, </a>
-            @endforeach
+            
           </span>
           <hr>
           <span>
             Written by:
-            @foreach($comics[0]['writers'] as $writer)
-                <a href="#">{{$writer}}, </a>
-            @endforeach
+            
           </span>
           <hr>
         </div>
@@ -59,11 +55,11 @@
             Specs
           </h3>
           <hr>
-          <span>Series: <span class="info">{{$comics[0]['series']}}</span></span>
+          <span>Series: <span class="info">{{$comics->series}}</span></span>
           <hr>
-          <span>U.S. price: <span class="info">{{$comics[0]['price']}}</span> </span>
+          <span>U.S. price: <span class="info">{{$comics->price}}</span> </span>
           <hr>
-          <span>On sale date: <span class="info">{{$comics[0]['sale_date']}}</span> </span>
+          <span>On sale date: <span class="info">{{$comics->sale_date}}</span> </span>
           <hr>
         </div>
       </div>
