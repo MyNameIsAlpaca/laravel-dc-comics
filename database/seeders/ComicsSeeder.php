@@ -28,8 +28,8 @@ class ComicsSeeder extends Seeder
             $newComics->series = $comic['series'];
             $newComics->sales_date = $comic['sale_date'];
             $newComics->type = $comic['type'];
-            $newComics->artists = 'jason paul';
-            $newComics->writers = 'jason paul';
+            $newComics->artists = 'nothing';
+            $newComics->writers = 'nothing';
 
             $newComics->save();
         }

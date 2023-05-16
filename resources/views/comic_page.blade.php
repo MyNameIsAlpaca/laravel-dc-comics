@@ -41,12 +41,12 @@
           <hr>
           <span>
             Art by:
-            
+            <strong>Work in progress</strong>
           </span>
           <hr>
           <span>
             Written by:
-            
+            <strong>Work in progress</strong>
           </span>
           <hr>
         </div>
@@ -59,7 +59,7 @@
           <hr>
           <span>U.S. price: <span class="info">{{$comics->price}}</span> </span>
           <hr>
-          <span>On sale date: <span class="info">{{$comics->sale_date}}</span> </span>
+          <span>On sale date: <span class="info">{{$comics->sales_date}}</span> </span>
           <hr>
         </div>
       </div>
