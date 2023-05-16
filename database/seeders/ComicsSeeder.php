@@ -21,13 +21,13 @@ class ComicsSeeder extends Seeder
         foreach ($listComics as $comic) {
             $newComics = new comics();
 
-            $newComics->title = 'ciao';
-            $newComics->desc = 'descrizione';
-            $newComics->thumb = 'https://imgs.search.brave.com/aUNyvZBXUulb963JH7KnQm9AMr8bcBoLsiHREOqayIU/rs:fit:612:612:1/g:ce/aHR0cHM6Ly9pNS53/YWxtYXJ0aW1hZ2Vz/LmNvbS9hc3IvOWZm/ZWYzMDMtMGZhYy00/OGRkLTg3ODctYzUy/NTk0MDk2ODAwXzEu/MTc1ZDk1Mjg2NzY0/OGEwOTczMTY2NGMy/MTE1NjNlYWIuanBl/Zz9vZG5XaWR0aD02/MTImb2RuSGVpZ2h0/PTYxMiZvZG5CZz1m/ZmZmZmY';
-            $newComics->price = 12.00;
-            $newComics->series = 'xman';
-            $newComics->sales_date = '12-23-2023';
-            $newComics->type = 'horror';
+            $newComics->title = $comic['title'];
+            $newComics->desc = $comic['description'];
+            $newComics->thumb = $comic['thumb'];
+            $newComics->price = $comic['price'];
+            $newComics->series = $comic['series'];
+            $newComics->sales_date = $comic['sale_date'];
+            $newComics->type = $comic['type'];
             $newComics->artists = 'jason paul';
             $newComics->writers = 'jason paul';
 
