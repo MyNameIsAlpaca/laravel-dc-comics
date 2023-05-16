@@ -5,7 +5,7 @@
     </div>
     <ul>
       <li>CHARACTERS</li>
-      <li class="active">COMICS</li>
+      <li class="active"><a href="{{route('comics.index')}}">COMICS</a> </li>
       <li>MOVIES</li>
       <li>TV</li>
       <li>GAMES</li>
