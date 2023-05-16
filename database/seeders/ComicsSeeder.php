@@ -15,7 +15,10 @@ class ComicsSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 0; $i < 10; $i++) {
+
+        $listComics = config('comics');
+
+        foreach ($listComics as $comic) {
             $newComics = new comics();
 
             $newComics->title = 'ciao';
