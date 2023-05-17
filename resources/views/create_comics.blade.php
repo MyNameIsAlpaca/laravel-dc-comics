@@ -15,7 +15,7 @@
       </div>
       <div class="mb-3">
         <label for="desc">Aggiungi una descrizione</label>
-        <input type="text" id="desc" name="desc">
+        <textarea type="text" id="desc" name="desc"></textarea>
       </div>
       <div class="mb-3">
         <label for="thumb">Aggiungi il link di un'immagine</label>
@@ -31,7 +31,7 @@
       </div>
       <div class="mb-3">
         <label for="sales_date">Aggiungi una data di vendita</label>
-        <textarea id="sales_date" name="sales_date"></textarea>
+        <input type="date" id="sales_date" name="sales_date">
       </div>
       <div class="mb-3">
         <label for="type">Aggiungi il tipo di fumetto</label>
