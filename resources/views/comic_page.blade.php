@@ -64,12 +64,33 @@
           <hr>
         </div>
       </div>
-      <form class="pb-3" action="{{route('comics.destroy', $comic)}}" method="POST">
-          @csrf
-          @method('DELETE')
-          
-          <button class="btn btn-danger" type="submit">CANCELLA</button>
-        </form>
+      <button type="button" class="btn btn-danger mb-4" data-toggle="modal" data-target="#exampleModal">
+        Cancella
+      </button>
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="deleteModalLabel">Sei sicuro di voler cancellare questo fumetto?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              La cancellazione sarà definitiva e irreversibile
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+              <form action="{{route('comics.destroy', $comic)}}" method="POST">
+                @csrf
+                @method('DELETE')
+      
+                <button class="btn btn-danger" type="submit" data-toggle="modal" data-target="deleteModal">CANCELLA</button>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
