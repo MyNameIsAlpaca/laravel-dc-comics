@@ -98,8 +98,10 @@ class ComicsController extends Controller
      * @param  \App\Models\comics  $comics
      * @return \Illuminate\Http\Response
      */
-    public function destroy(comics $comics)
+    public function destroy(comics $comic)
     {
-        //
+        $comic->delete();
+
+        return redirect()->route('home');
     }
 }

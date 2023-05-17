@@ -64,6 +64,12 @@
           <hr>
         </div>
       </div>
+      <form class="pb-3" action="{{route('comics.destroy', $comic)}}" method="POST">
+          @csrf
+          @method('DELETE')
+          
+          <button class="btn btn-danger" type="submit">CANCELLA</button>
+        </form>
     </div>
   </div>
 </div>
