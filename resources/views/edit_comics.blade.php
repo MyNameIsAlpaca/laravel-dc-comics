@@ -4,7 +4,7 @@
 
 <div class="create">
   <div class="container">
-    <h1>Modifica il fumetto!</h1>
+    <h1>Modifica il fumetto: {{$comic->title}}</h1>
 
     @if ($errors->any())
 
@@ -25,34 +25,70 @@
 
       <div class="mb-3">
         <label for="title">Modifica il titolo</label>
-        <input class="form-control" required type="text" id="title" name="title" value="{{$comic->title}}">
-      </div>
-      <div  class="mb-3">
-        <label for="desc">Modifica la descrizione</label>
-        <textarea class="form-control" required type="text" id="desc" name="desc">{{$comic->desc}}</textarea>
+        <input class="form-control @error('title') is-invalid @enderror" type="text" id="title" value="{{old('title')}}" name="title" value="{{old('title')}}">
+        @error('title')
+          <div class="invalid-feedback">
+            {{$message}}
+          </div>
+        @enderror
+        
       </div>
       <div class="mb-3">
-        <label for="thumb">Modifica il link di un'immagine</label>
-        <input class="form-control" required type="text" id="thumb" name="thumb" value="{{$comic->thumb}}">
+        <label for="desc">Modifica la descrizione</label>
+        <textarea class="form-control @error('title') is-invalid @enderror" type="text" id="desc" name="desc" required>{{old('desc')}}</textarea>
+        @error('desc')
+          <div class="invalid-feedback">
+            {{$message}}
+          </div>
+        @enderror
+      </div>
+      <div class="mb-3">
+        <label for="thumb">Modifica il link dell'immagine</label>
+        <input class="form-control @error('title') is-invalid @enderror" type="text" id="thumb" value="{{old('thumb')}}" name="thumb" required>
+        @error('thumb')
+          <div class="invalid-feedback">
+            {{$message}}
+          </div>
+        @enderror
       </div>
       <div class="mb-3">
         <label for="price">Modifica il prezzo</label>
-        <input class="form-control" required type="text" id="price" name="price" value="{{$comic->price}}">
+        <input class="form-control @error('title') is-invalid @enderror" type="text" id="price" value="{{old('price')}}" name="price" required>
+        @error('price')
+          <div class="invalid-feedback">
+            {{$message}}
+          </div>
+        @enderror
       </div>
       <div class="mb-3">
         <label for="series">Modifica la serie</label>
-        <input class="form-control" required type="text" id="series" name="series" value="{{$comic->series}}">
+        <input class="form-control @error('title') is-invalid @enderror" type="text" id="series" value="{{old('series')}}" name="series" required>
+        @error('series')
+          <div class="invalid-feedback">
+            {{$message}}
+          </div>
+        @enderror
       </div>
       <div class="mb-3">
         <label for="sales_date">Modifica la data di vendita</label>
-        <input class="form-control" required type="date" id="sales_date" name="sales_date" value="{{$comic->sales_date}}">
+        <input class="form-control @error('title') is-invalid @enderror" type="date" id="sales_date" value="{{old('sales_date')}}" name="sales_date" required>
+        @error('sales_date')
+          <div class="invalid-feedback">
+            {{$message}}
+          </div>
+        @enderror
       </div>
       <div class="mb-3">
         <label for="type">Modifica il tipo di fumetto</label>
-        <input class="form-control" required type="text" id="type" name="type" value="{{$comic->type}}">
+        <input class="form-control @error('title') is-invalid @enderror" type="text" id="type" value="{{old('type')}}" name="type" required>
+        @error('type')
+          <div class="invalid-feedback">
+            {{$message}}
+          </div>
+        @enderror
       </div>
     
-      <button type="submit" class="btn btn-primary">Aggiungi</button>
+      <button type="submit" class="btn btn-primary">Salva</button>
   </div>
 </div>
 
