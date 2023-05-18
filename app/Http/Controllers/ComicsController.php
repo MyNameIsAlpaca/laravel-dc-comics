@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\comics;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ComicsController extends Controller
 {
@@ -36,16 +37,7 @@ class ComicsController extends Controller
      */
     public function store(Request $request)
     {
-
-        $request->validate([
-            'title' => 'required|max:200',
-            'desc' => 'required',
-            'thumb' => 'required',
-            'price' => 'required',
-            'series' => 'required|max:50',
-            'sales_date' => 'required|max:11',
-            'type' => 'required|max:30',
-        ]);
+        $this->validation($request);
 
         $data = $request->all();
 
@@ -96,15 +88,9 @@ class ComicsController extends Controller
     public function update(Request $request, comics $comic)
     {
 
-        $request->validate([
-            'title' => 'required|max:200',
-            'desc' => 'required',
-            'thumb' => 'required',
-            'price' => 'required',
-            'series' => 'required|max:50',
-            'sales_date' => 'required|max:11',
-            'type' => 'required|max:30',
-        ]);
+
+
+        $this->validation($request);
 
         $data = $request->all();
 
@@ -125,5 +111,32 @@ class ComicsController extends Controller
         $comic->delete();
 
         return redirect()->route('home');
+    }
+
+    private function validation($request)
+    {
+
+        $data = $request->all();
+
+        $validator = Validator::make($data, [
+            'title' => 'required|max:200',
+            'desc' => 'required',
+            'thumb' => 'required',
+            'price' => 'required',
+            'series' => 'required|max:50',
+            'sales_date' => 'required|max:11',
+            'type' => 'required|max:30',
+        ], [
+            'title.required' => 'Il titolo è necessario',
+            'title.max' => 'Il titolo non deve essere più lungo di 200 caratteri',
+            'desc.required' => 'Aggiungi una descrizione',
+            'thumb.required' => "Aggiungi un'immagine",
+            'series.required' => "Aggiungi la serie",
+            'series.max' => 'La serie non può essere cosi lunga',
+            'sales_date.required' => 'Aggiungi una data',
+            'sales_data.max' => 'Che razza di data hai aggiunto?',
+            'type.required' => 'Aggiungi il tipo del fumetto',
+            'type.max' => 'Il tipo di fumetto non può essere cosi lungo',
+        ])->validate();
     }
 }
