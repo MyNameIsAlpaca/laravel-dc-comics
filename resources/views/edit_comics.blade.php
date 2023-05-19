@@ -35,7 +35,7 @@
       </div>
       <div class="mb-3">
         <label for="desc">Modifica la descrizione</label>
-        <textarea classform-control @error('desc') is-invalid @enderror" type="text" id="desc" name="desc" required>{{old('desc') ?? $comic->desc}}</textarea>
+        <textarea class="form-control @error('desc') is-invalid @enderror" type="text" id="desc" name="desc" required>{{old('desc') ?? $comic->desc}}</textarea>
         @error('desc')
           <div class="invalid-feedback">
             {{$message}}
